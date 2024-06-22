@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: none;
+}
+
+.item {
+  padding: 45px 5px;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(146, 146, 146);
+  width: 350px;
+  text-align: center;
+}
+
+ .home-button,
+ .product-button {
+  background-color: rgb(71, 71, 71);
+  border: 3px solid rgb(71, 71, 71);
+  border-radius: 25px;
+  color: white;
+  padding: 8px 18px;
+  margin-top: 15px;
+}
+ 
+.home-button:hover,
+.product-button:hover{
+  background-color: rgb(41, 41, 41);
+  cursor: pointer;
+ }
+
+ .header-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+ }
+ .cart-button {
+  background-color: red;
+  color: white;
+  margin-left: 30px;
+  border: none;
+  height: 35px;
+  width: 100px;
+  border-radius: 4px;
+  padding-top: 5px;
+ }
+
+ .cart-button:hover{
+  background-color: rgb(110, 2, 2);
+  cursor: pointer;
+ }
+
+ .cart-container {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 30px;
+  margin-top: 2%;
+}
+.cart-item{
+  margin-bottom: 50px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgb(146, 146, 146);
+  padding: 12px 24px;
+  border-radius: 8px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+
+
+.changeAmount {
+  border-radius: 50%;
+  background-color: rgb(71, 71, 71);
+  border: 3px solid rgb(71, 71, 71);
+  color: white;
+  width: 30px;
+  height: 30px;
+  margin: 0px 5px;
+}
+
+.changeAmount:hover {
+  background-color: rgb(31, 31, 31);
+  cursor: pointer;
+}
+
+@media(max-width:200px) {
+  .cart-item {
+  background-color: red;
+  }
+}
+
+/* out of stock */
+.item.disabled-item,
+.product-detail-container.disabled-item {
+  position: relative;
+}
+
+.item.disabled-item::before,
+.product-detail-container.disabled-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(192, 192, 192, 0.5); 
+  z-index: 1;
+}
+
+.item.disabled-item .product-button,
+.product-detail-container.disabled-item .product-detail-button {
+  pointer-events: auto;
+  cursor: not-allowed;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.product-item:hover{
+  cursor: pointer;
+  background-color: rgb(1, 1, 118, 0.2);
+}
+
+.cart-item-prouct:hover {
+  cursor: pointer;
+  background-color: rgb(1, 1, 118, 0.2);
+}
